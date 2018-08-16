@@ -1,22 +1,37 @@
+const grid = document.getElementById("grid");
+const gridSize = 500;
+let cellSize;
+let cells = document.querySelectorAll(".cells");
+
+function setCellSize(width){
+  cellSize = Math.floor((width/gridSize)* 1000);
+
+  return cellSize;
+}
 
 
-function gridMaker(height, width){
 
-  for(let i=1; i<=width*height;i++){
+function gridMaker(width){
+
+  for(let i=1; i<=width*width;i++){
+    //debugger;
     let cell = document.createElement("div");
-    cell.textContent =i;
-    cell.setAttribute("class", "cells");
-    cell.addEventListener("mouseover", ()=>cell.style.backgroundColor = "red");
     grid.appendChild(cell);
+    cell.innerHTML = i;
+
+    cell.setAttribute("class", "cells");
+    setCellSize(width);
+    cell.style.setProperty('--width', cellSize+"px");
+    cell.style.setProperty('--height', cellSize+"px");
+
+    cell.addEventListener("mouseover", ()=>cell.style.backgroundColor = "pink");
   }
 }
-gridMaker(16,16);
-
-//--------------------------------------------------------------------------
-let resetButton = document.getElementById("resetButton");
-resetButton.addEventListener("click", resetGrid);
+gridMaker(32);
 
 
+
+////////////Reset
 function resetGrid(){
   let input = prompt("Input number of cells or something!");
 
@@ -31,3 +46,6 @@ function resetGrid(){
   }
   gridMaker(input, input);
 }
+//--------------------------------------------------------------------------
+let resetButton = document.getElementById("resetButton");
+resetButton.addEventListener("click", resetGrid);

@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Etch a  sketch</title>
+    <title>Etch-a-sketch</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="skeleton.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 
   </head>
 
   <body>
-
-    <h1>Etch a sketch</h1>
-    <h2>Some words of encouragement!</h2>
-
-    <button id="resetButton">Reset sketch</button>
-    <div id=grid class="gridSquares"></div>
-
+    <div id="wrapper">
+      <h1>Etch-a-sketch</h1>
+      <div class="gridContainer">
+        <div id=grid></div>
+      </div>
+      <button id="resetButton">Reset sketch</button>
+    </div>
   <script src = "script.js"></script>
   </body>
 </html>
