@@ -8,9 +8,14 @@ function setCellSize(width){
 
   return cellSize;
 }
+let color;
+let colors = ["#D99F7E", "#EFDFC8", "#6A91B2", "#2C0216", "#590A27"];
+function pickColor(colors){
+  color = colors[Math.floor(Math.random() * colors.length)];
+  console.log(color);
+  return color;
 
-
-
+}
 function gridMaker(width){
 
   for(let i=1; i<=width*width;i++){
@@ -24,7 +29,7 @@ function gridMaker(width){
     cell.style.setProperty('--width', cellSize+"px");
     cell.style.setProperty('--height', cellSize+"px");
 
-    cell.addEventListener("mouseover", ()=>cell.style.backgroundColor = "pink");
+    cell.addEventListener("mouseover", ()=>cell.style.backgroundColor = "#da6177");
   }
 }
 gridMaker(32);
